@@ -25,7 +25,7 @@ function App() {
     formData.append('file', file) 
 
     try {
-      const apiUrl = import.meta.env.BACKEND_API_URL || "http://localhost:8000";
+      const apiUrl = import.meta.env.VITE_BACKEND_API_URL || "http://localhost:8000";
       const response = await fetch(`${apiUrl}/upload-pdf/`, {
         method: 'POST',
         body: formData,
