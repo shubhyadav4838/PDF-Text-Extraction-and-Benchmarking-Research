@@ -7,7 +7,10 @@ app = FastAPI()
 # --- Prevent CORS Errors ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"], # Your React/Vite local URL
+    allow_origins=[
+        "http://localhost:5173",
+        "https://pdf-text-extraction-and-benchmarkin.vercel.app"
+        ], # Your React/Vite local URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
