@@ -9,7 +9,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://pdf-text-extraction-and-benchmarkin.vercel.app"
+        "https://pdf-text-extraction-and-benchmarking-research-pe17j0yba.vercel.app/"
         ], # Your React/Vite local URL
     allow_credentials=True,
     allow_methods=["*"],
