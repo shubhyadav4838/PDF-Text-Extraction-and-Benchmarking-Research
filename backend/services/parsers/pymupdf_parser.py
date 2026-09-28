@@ -1,4 +1,4 @@
-import fitz
+import pymupdf as fitz
 from typing import Dict, Any
 from services.parsers.base import BaseParser
 from core.config import settings
