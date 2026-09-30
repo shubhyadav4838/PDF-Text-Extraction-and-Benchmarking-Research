@@ -38,3 +38,26 @@ export const benchmarkPdf = async (file) => {
 
     return response.json();
 };
+
+export const extractPdf = async (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+
+    const response = await fetch(`${API_BASE_URL}/api/v1/extract`, {
+        method: 'POST',
+        body: formData,
+    });
+
+    if (!response.ok) {
+        let errorMessage = 'Failed to extract data';
+        try {
+            const errorData = await response.json();
+            errorMessage = errorData.detail || errorData.message || errorMessage;
+        } catch {
+            errorMessage = response.statusText || errorMessage;
+        }
+        throw new Error(errorMessage);
+    }
+
+    return response.json();
+};

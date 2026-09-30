@@ -6,10 +6,14 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.141.1",
+    "opencv-python>=5.0.0.93",
+    "pdf2image>=1.17.0",
     "pdfminer-six>=20260107",
     "pdfplumber>=0.11.10",
+    "pillow>=12.3.0",
     "pydantic-settings>=2.15.0",
     "pymupdf>=1.28.2",
+    "pytesseract>=0.3.13",
     "python-multipart>=0.0.32",
     "uvicorn[standard]>=0.53.0",
 ]
