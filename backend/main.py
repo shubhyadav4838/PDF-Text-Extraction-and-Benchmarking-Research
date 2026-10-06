@@ -6,12 +6,16 @@ from api.v1.routes_extraction import router as extraction_router
 
 app = FastAPI(title="PDF Extraction Backend")
 
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "https://pdf-text-extraction-and-benchmarking-research.vercel.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://pdf-text-extraction-and-benchmarkin.vercel.app"
-        ],
+    allow_origins=origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",  # Matches any Vercel preview branch deployment
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
