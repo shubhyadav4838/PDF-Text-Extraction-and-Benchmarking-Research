@@ -15,7 +15,7 @@ class OCRParser(BaseParser):
             file_bytes, 
             first_page=page_num, 
             last_page=page_num, 
-            dpi=300
+            dpi=150
         )
         
         full_text = []
